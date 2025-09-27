@@ -9,7 +9,6 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 class AlarmEntity {
-
     @Entity(tableName = "alarms")
     data class Alarm(
         @PrimaryKey(autoGenerate = true) val id: Int = 0,
@@ -19,5 +18,7 @@ class AlarmEntity {
         val minute: Int,
         val days: List<Int>
     )
+
+    //TODO добавить отработку неправльно переданных значений
 
 }
