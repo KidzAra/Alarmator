@@ -8,17 +8,25 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-class AlarmEntity {
-    @Entity(tableName = "alarms")
-    data class Alarm(
-        @PrimaryKey(autoGenerate = true) val id: Int = 0,
-        val alarmType: String,
-        val isEnabled: Boolean,
-        val hour: Int,
-        val minute: Int,
-        val days: List<Int>
-    )
-
-    //TODO добавить отработку неправльно переданных значений
-
-}
+@Entity(tableName = "alarms")
+data class Alarm(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val alarmType: String,
+    val isEnabled: Boolean,
+    val hour: Int,
+    val minute: Int,
+    val days: List<Int>
+    
+    ) {init {
+        if (hour !in 0..23) {
+            throw IllegalArgumentException("Hour must be between 0 and 23")
+        }
+        if (minute !in 0..59) {
+            throw IllegalArgumentException("Minute must be between 0 and 59")
+        }
+        for (day in days) {
+            if (day !in 1..7) {
+                throw IllegalArgumentException("Days must be between 1 (Monday) and 7 (Sunday)")
+            }
+        }
+    }}

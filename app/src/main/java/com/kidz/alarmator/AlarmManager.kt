@@ -7,7 +7,7 @@ import android.content.Intent
 import java.util.Calendar
 
 class AlarmManager (private val context: Context) {
-    fun scheduleAlarm(entity: AlarmEntity.Alarm) {
+    fun scheduleAlarm(entity: Alarm) {
         val alarmType = entity.alarmType
         val isEnabled = entity.isEnabled
         val hour = entity.hour
