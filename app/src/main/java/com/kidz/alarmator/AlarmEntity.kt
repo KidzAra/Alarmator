@@ -15,7 +15,8 @@ data class Alarm(
     val isEnabled: Boolean,
     val hour: Int,
     val minute: Int,
-    val days: List<Int>
+    val days: List<Int>,
+    val label: String = ""
     
     ) {init {
         if (hour !in 0..23) {

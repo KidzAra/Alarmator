@@ -10,7 +10,7 @@ class AlarmReceiver : BroadcastReceiver() {
         val label = intent.getStringExtra("label") ?: "no label"
         val id = intent.getIntExtra("id", -1)
         val alarmType = intent.getStringExtra("alarmType") ?: "standart"
-
+        //TODO: добавить функционал
         Toast.makeText(context, "Будильник #$id: $label, $alarmType", Toast.LENGTH_LONG).show()
 
 
