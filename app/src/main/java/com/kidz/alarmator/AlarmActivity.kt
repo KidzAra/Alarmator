@@ -73,6 +73,7 @@ class AlarmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //TODO: нужно будет добавить воспроизведение звука, вибрации и функциональность кнопок
+        //* Юзается медиаплеер дял звука, VIBRATOR_SERVICE для вибрации
         binding = ActivityAlarmBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
